@@ -1,0 +1,6 @@
+<p><b>Like count: </b><%= like_count %></p>
+
+<%= form_for :like, :url => challenge_two_action_path do |f| %>
+  <%= f.hidden_field :page_id, :value => '1' %>
+  <%= f.submit "Like", :class => "btn btn-primary" %>
+<% end %>

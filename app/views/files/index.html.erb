@@ -1,0 +1,16 @@
+<h1>Uploaded files</h1>
+
+<table class="table table-bordered" style="width: 100%">
+  <thead>
+    <th>Name</th>
+    <th>Updated at</th>
+    <th>Actions</th>
+  </thead>
+  <% @files.each do |f| %>
+    <tr>
+      <td><%= f.file_name %></td>
+      <td><%= f.updated_at %></td>
+      <td><%= link_to "Edit", edit_file_path(f) %></td>
+    </tr>
+  <% end %>
+</table>

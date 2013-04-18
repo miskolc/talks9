@@ -1,0 +1,22 @@
+<h1>Enter your credit card details</h1>
+
+<%= form_for :credit_card, :url => cc_process_path, :html => {:class => "form"} do |f| %>
+  <div class="control-group">
+    <%= f.label :cc, :class => "control-label" %>
+    <%= f.text_field :cc, :class => "input "%>
+  </div>
+  
+  <div class="control-group">
+    <%= f.label :expiration_date, :class => "control-label" %>
+    <%= f.text_field :expiration_date, :class => "input" %>
+  </div>
+  
+  <div class="control-group">
+    <%= f.label :cvv, :class => "control-label" %>
+    <%= f.text_field :cvv, :class => "input"%>
+  </div>
+  
+  <div class="control-group">
+    <%= f.submit 'Send', :class => "btn btn-primary" %>
+  </div>
+<% end %>

@@ -1,0 +1,25 @@
+<div id="comments">
+  <h1> Comments <%= link_to "Hack", hack_two_path %></h1>
+
+  <% if @comments.count %>
+    <% @comments.each do |comment| %>
+    <div class="comment<%= ' me' if comment.user == current_user %>">
+      <p><b><%= comment.user.name %>: </b><%= comment.content %></p>
+    </div>
+    <% end %>
+  <% else %>
+    <div class="alert alert-block">
+      No comments yet.
+    </div>
+  <% end %>
+
+  <%= form_for Comment.new, :url => create_comment_path, :class => "form form-stacked" do |f| %>
+    <div class="field">
+      <%= f.text_area :content, :rows => 5 %>
+    </div>
+  
+    <div class="field">
+      <%= f.submit 'Submit', :class => "btn btn-primary btn-large" %> as <%= current_user.name %>
+    </div>
+  <% end %>
+</div>

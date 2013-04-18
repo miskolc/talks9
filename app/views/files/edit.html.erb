@@ -1,0 +1,12 @@
+<h1>Edit file</h1>
+
+<%= form_for @file, :url => {:controller => "files", :action => "update"} do |f| %>
+  <div class="field">
+    <%= f.label :file_name %>
+    <%= f.text_field :file_name %>
+  </div>
+  
+  <div class="field">
+    <%= f.submit 'Update', :class => "btn btn-primary" %>
+  </div>
+<% end %>

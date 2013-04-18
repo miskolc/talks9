@@ -1,0 +1,27 @@
+<%= form_for @user, :url => update_user_path do |f| %>
+  <h1> Edit account </h1>
+
+
+  <% @user.errors.full_messages.each do |msg| %>
+    <p class="error"><%= msg %></p>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :url, "Homepage url" %>
+    <%= f.text_field :url %>
+  </div>
+  
+  <div class="field submit">
+    <%= f.submit 'Update', :class => "btn btn-primary btn-large" %>
+  </div>
+<% end %>

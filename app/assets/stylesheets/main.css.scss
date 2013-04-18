@@ -1,0 +1,61 @@
+body {
+  background-color: #004466;
+}
+
+.container {
+  background: #FFF;
+  width: 920px;
+  margin: 0px auto;
+  min-height: 800px;
+  padding: 20px;
+  
+  .auth-center {
+    width: 300px;
+    margin: 0px auto;
+    margin-top: 100px;
+    
+    .auth-item {
+      border-radius: 8px;
+      text-align: center;      
+      
+      &.signup {
+        background-color: orange;
+      }
+      
+      &.signin {
+        background-color: green;
+      }
+      
+      a {
+        display: block;
+        padding: 10px 20px;
+        color: #FFF;        
+        text-decoration: none;
+        margin-bottom: 10px;
+      }
+    } 
+  }
+}
+
+
+#notice { background-color: #A4E7A0; border: 1px solid #26722D; }
+#error { background-color: #F0A8A8; border: 1px solid #900; }
+#alert { background-color: #F0A8A8; border: 1px solid #900; }
+
+#notice, #error, #alert {
+  text-align: center;
+  width: 90%; 
+  margin: 0 auto 10px auto; 
+  padding: 5px;
+  a { margin-right: 10px; border: 1px solid #900; color: #900;}
+  a:hover { color: #333; border: 1px solid #333; }
+  p { margin-left: 20px; padding: 0; font-size: .75em; color: #000; }
+}
+
+#filters {
+  margin-top: 30px;
+}
+
+table#projects {
+  margin-top: 10px;
+}

@@ -1,0 +1,25 @@
+#comments {
+  h1 { text-align: center;}
+  .comment {
+    padding: 10px 20px;
+    background-color: #ECAB4B;
+    border-color: #CCC;
+    border-radius: 4px;
+    width: 500px;
+    margin: 0px auto;
+    margin-bottom: 10px;
+    
+    &.me { background-color: green;}
+  }
+
+  #new_comment {
+    .field {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    textarea {
+      width: 500px;
+      margin: 0px auto;
+    }
+  }  
+}

@@ -1,0 +1,57 @@
+<div style="float: right">
+  <% if current_user.admin? %>
+    <%= link_to "Admin", "#", :class => "btn btn-danger" %>
+  <% end %>
+  <%= link_to "Edit account", edit_user_path, :class => "btn btn-success" %>
+  <%= link_to('Logout', destroy_user_session_path, :class => "btn", :method => :delete) %>  
+</div>
+
+<h1>
+  Hi <%= current_user.name %> 
+</h1>
+
+<div id="filters">
+  <span>Filter projects with: </span>
+  <%= link_to "All", root_path() %> |
+  <%= link_to "Open", root_path(:status => "open" ) %> |
+  <%= link_to "In progress", root_path(:status => "in_progress" ) %> |
+  <%= link_to "Closed", root_path(:status => "closed") %>
+  <span> tasks </span>
+</div>
+
+<table id="projects" class="table table-bordered" style="width: 100%">
+  <thead>
+    <td>Name</td>
+    <td>Tasks count</td>
+    <td>Author</td>
+  </thead>
+  <% @projects.each do |p| %>
+    <tr>
+      <td><%= link_to p.name, p %></td>
+      <td><%= p.tasks_count %> tasks, <%= p.tasks_count(:open) %> open, <%= p.tasks_count(:in_progress) %> in progress, <%= p.tasks_count(:closed) %> closed</td>
+      <td><%= p.user.name %></td>
+    </tr>
+  <% end %>
+</table>
+
+<table id="users" class="table table-bordered" style="width: 100%">
+  <thead>
+    <th>Name</th>
+  </thead>
+  
+  <% User.all.each do |user| %>
+  <tr>
+    <td><%= link_to user.name, user.url %></td>
+  </tr>
+  <% end %>
+</table>
+
+<div id="challenges">
+  <%= link_to "Challenge 1", edit_user_path %> |
+  <%= link_to "Challenge 2", challenge_two_path %> |
+  <%= link_to "Challenge 3", edit_user_path %> |
+  <%= link_to "Challenge 4", root_path(:status => "open" ) %> |
+  <%= link_to "Challenge 5", cc_form_path %> |
+  <%= link_to "Challenge 8", challenge_eight_path %> |
+  <%= link_to "Challenge 9", challenge_nine_path %>
+</div>
